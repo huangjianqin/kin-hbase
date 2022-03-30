@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.kin</groupId>
+    <artifactId>kin-hbase-dependencies</artifactId>
+    <packaging>pom</packaging>
+    <version>0.1.0.0</version>
+    <description>kin-hbase项目第三方依赖清单</description>
+
+    <properties>
+        <kin-framework-java.version>0.1.0.0</kin-framework-java.version>
+        <hbase.version>2.2.3</hbase.version>
+        <spring.boot.version>2.5.0</spring.boot.version>
+
+        <jyaml.version>1.3</jyaml.version>
+        <netty.version>4.1.28.Final</netty.version>
+        <logback.version>1.2.3</logback.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.kin</groupId>
+                <artifactId>kin-framework-java</artifactId>
+                <version>${kin-framework-java.version}</version>
+            </dependency>
+
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- hbase -->
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-client</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-common</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-server</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-mapreduce</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
